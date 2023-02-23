@@ -11,11 +11,6 @@ const App = () => {
   const [timerId, setTimerId] = useState();
 
   function handleClick() {
-    if (timerId && !isOn) {
-      // Note: clearTimeout returns undefined
-      setTimerId(clearTimeout(timerId));
-    }
-
     if (isOn) {
       setCounter(count + 1);
       setBlock("block");
@@ -23,13 +18,10 @@ const App = () => {
     } else {
       setBlock("block night");
       setIsOn(true);
-      setTimerId(
-        setTimeout(() => {
-          setIsOn(false);
-          setBlock("block");
-          setTimerId(null);
-        }, 5000)
-      );
+      setTimeout(() => {
+        setIsOn(false);
+        setBlock("block");
+      }, 5000);
     }
   }
 
