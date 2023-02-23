@@ -8,7 +8,6 @@ const App = () => {
   const [isOn, setIsOn] = useState(false);
   const [count, setCounter] = useState(0);
   const [isblock, setBlock] = useState("block");
-  const [timerId, setTimerId] = useState();
 
   function handleClick() {
     if (isOn) {
